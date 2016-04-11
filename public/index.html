@@ -1,0 +1,28 @@
+<!Doctype html>
+<html>
+  <head>
+    <title>Fractal 2D by Matthew Scott</title>
+  </head>
+  <body>
+    <script type="text/processing">
+      void setup(){
+        size(1700,1000);
+        int size = 1000;
+        Line line = new Line(350, 600, size,0);
+
+        line.evolve( (int)(log(size)/log(2)) );
+
+        for(int x = 0; x<5; x++){
+          line = new Line(100+x*300, 800, 200,0);
+          line.evolve(x);
+        }
+         for(int x = 5; x<10; x++){
+          line = new Line(100+(x-5)*300, 975, 200,0);
+          line.evolve(x);
+        }
+      }
+    </script>
+    <canvas></canvas>
+    <script src="/scripts/processing.min.js"></script>
+  </body>
+</html>
